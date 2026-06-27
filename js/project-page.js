@@ -12,7 +12,7 @@ function imageUrl(basePath, index) {
   return full.split('/').map(encodeURIComponent).join('/');
 }
 
-function initCarousel(container, { basePath, count, label, brochure = false }) {
+function initCarousel(container, { basePath, count, label, brochure = false, plans = false }) {
   const track = container.querySelector('.preview-carousel-track');
   const dotsContainer = container.querySelector('.preview-carousel-dots');
   const counter = container.querySelector('.preview-carousel-counter');
@@ -22,7 +22,7 @@ function initCarousel(container, { basePath, count, label, brochure = false }) {
 
   for (let i = 1; i <= count; i++) {
     const slide = document.createElement('div');
-    slide.className = 'preview-carousel-slide';
+    slide.className = 'preview-carousel-slide' + (plans ? ' preview-carousel-slide--contain' : '');
     slide.style.backgroundImage = `url('${imageUrl(basePath, i)}')`;
     slide.setAttribute('role', 'img');
     slide.setAttribute('aria-label', `${label} ${i}`);
@@ -51,6 +51,53 @@ function initCarousel(container, { basePath, count, label, brochure = false }) {
   function resetAuto() {
     clearInterval(autoTimer);
     autoTimer = setInterval(() => goTo(current + 1), brochure ? 5000 : 4500);
+  }
+
+  prevBtn.addEventListener('click', () => { goTo(current - 1); resetAuto(); });
+  nextBtn.addEventListener('click', () => { goTo(current + 1); resetAuto(); });
+  resetAuto();
+}
+
+function initImageListCarousel(container, { images, label }) {
+  const track = container.querySelector('.preview-carousel-track');
+  const dotsContainer = container.querySelector('.preview-carousel-dots');
+  const counter = container.querySelector('.preview-carousel-counter');
+  const prevBtn = container.querySelector('[data-carousel-prev]');
+  const nextBtn = container.querySelector('[data-carousel-next]');
+  if (!track || !dotsContainer || !images.length) return;
+
+  images.forEach((src, i) => {
+    const slide = document.createElement('div');
+    slide.className = 'preview-carousel-slide preview-carousel-slide--contain';
+    slide.style.backgroundImage = `url('${encodeImagePath(src)}')`;
+    slide.setAttribute('role', 'img');
+    slide.setAttribute('aria-label', `${label} ${i + 1}`);
+    track.appendChild(slide);
+
+    const dot = document.createElement('button');
+    dot.type = 'button';
+    dot.className = 'preview-carousel-dot' + (i === 0 ? ' active' : '');
+    dot.setAttribute('aria-label', `Image ${i + 1}`);
+    dot.addEventListener('click', () => goTo(i));
+    dotsContainer.appendChild(dot);
+  });
+
+  const count = images.length;
+  let current = 0;
+  let autoTimer;
+
+  function goTo(index) {
+    current = (index + count) % count;
+    track.style.transform = `translateX(-${current * 100}%)`;
+    if (counter) counter.textContent = `${current + 1} / ${count}`;
+    dotsContainer.querySelectorAll('.preview-carousel-dot').forEach((d, i) => {
+      d.classList.toggle('active', i === current);
+    });
+  }
+
+  function resetAuto() {
+    clearInterval(autoTimer);
+    autoTimer = setInterval(() => goTo(current + 1), 4500);
   }
 
   prevBtn.addEventListener('click', () => { goTo(current - 1); resetAuto(); });
@@ -195,6 +242,31 @@ function renderProject(project) {
     const sectionTitle = project.gallerySectionTitle || 'Développement du projet';
     html += `<section class="project-section"><div class="section-label">${sectionLabel}</div><h2>${sectionTitle}</h2></section>`;
     project.galleries.forEach((gallery, idx) => {
+      if (gallery.limitedPreview) {
+        html += `
+        <section class="project-section" style="padding-top:0;margin-bottom:48px;">
+          <h2 style="font-size:1.3rem;margin-bottom:4px;">${gallery.title}</h2>
+          ${gallery.subtitle ? `<p class="project-gallery-section-subtitle">${gallery.subtitle}</p>` : ''}
+          <div class="project-lot-preview" oncontextmenu="return false;">
+            <p class="preview-carousel-label">Aperçu limité</p>
+            <div class="preview-carousel preview-carousel--plans" id="galleryCarousel-${idx}" data-carousel>
+              <div class="preview-carousel-viewport">
+                <div class="preview-carousel-track"></div>
+                <div class="preview-carousel-watermark">Aperçu · NFN Design</div>
+              </div>
+              <div class="preview-carousel-nav">
+                <button type="button" class="preview-carousel-btn" data-carousel-prev aria-label="Précédent">‹</button>
+                <div class="preview-carousel-dots"></div>
+                <button type="button" class="preview-carousel-btn" data-carousel-next aria-label="Suivant">›</button>
+              </div>
+              <p class="preview-carousel-counter">1 / ${gallery.images.length}</p>
+            </div>
+            <p class="preview-carousel-notice">Aperçu à titre illustratif — les documents complets ne sont pas accessibles en ligne.</p>
+          </div>
+        </section>`;
+        return;
+      }
+
       const dense = gallery.images.length > 6 ? ' project-gallery-grid--dense' : '';
       const itemClass = gallery.fit === 'contain' ? ' project-gallery-item--contain' : '';
       html += `
@@ -249,6 +321,16 @@ function renderProject(project) {
       basePath: project.previews.basePath,
       count: project.previews.count,
       label: project.title
+    });
+  }
+
+  if (project.galleries) {
+    project.galleries.forEach((gallery, idx) => {
+      if (!gallery.limitedPreview) return;
+      const el = document.getElementById(`galleryCarousel-${idx}`);
+      if (el) {
+        initImageListCarousel(el, { images: gallery.images, label: gallery.title });
+      }
     });
   }
 

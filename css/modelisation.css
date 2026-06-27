@@ -145,6 +145,7 @@ a { text-decoration: none; color: inherit; }
   transition: color var(--transition);
 }
 .model-about-link:hover { color: var(--bordeaux-light); }
+.model-section-link-wrap { margin-top: 24px; }
 .model-about-meta {
   background: var(--white);
   border: 1px solid var(--gray-light);

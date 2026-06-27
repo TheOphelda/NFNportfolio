@@ -57,19 +57,19 @@ const PROJECTS = {
       {
         title: 'Lot Carrelage',
         subtitle: 'Détails techniques et plans d\'exécution',
-        fit: 'contain',
+        limitedPreview: true,
         images: ['images/Green/carrelage/carrelage-1.jpeg', 'images/Green/carrelage/carrelage-2.jpeg', 'images/Green/carrelage/carrelage-3.jpeg']
       },
       {
         title: 'Lot Étanchéité',
         subtitle: 'Détails d\'étanchéité et interfaces',
-        fit: 'contain',
+        limitedPreview: true,
         images: ['images/Green/etancheite/etancheite-1.jpeg', 'images/Green/etancheite/etancheite-2.jpeg', 'images/Green/etancheite/etancheite-3.jpeg']
       },
       {
         title: 'Menuiserie Bois — Cuisine',
         subtitle: 'Plans et détails menuiserie cuisine',
-        fit: 'contain',
+        limitedPreview: true,
         images: [
           'images/Green/MENUISERIE-BOIS-CUISINE/menuiserie-bois-cuisine-1.jpeg',
           'images/Green/MENUISERIE-BOIS-CUISINE/menuiserie-bois-cuisine-2.jpeg',
@@ -79,7 +79,7 @@ const PROJECTS = {
       {
         title: 'Menuiserie Bois — Placards',
         subtitle: 'Détails placards et agencements',
-        fit: 'contain',
+        limitedPreview: true,
         images: [
           'images/Green/menuiserie-bois-placards/menuiserie-bois-placards-1.jpeg',
           'images/Green/menuiserie-bois-placards/menuiserie-bois-placards-2.jpeg'
@@ -88,7 +88,7 @@ const PROJECTS = {
       {
         title: 'Menuiserie Métallique',
         subtitle: 'Détails d\'exécution menuiserie métallique',
-        fit: 'contain',
+        limitedPreview: true,
         images: [
           'images/Green/MENUISERIE-METALLIQUE/menuiserie-metallique-1.jpeg',
           'images/Green/MENUISERIE-METALLIQUE/menuiserie-metallique-2.jpeg',
@@ -201,17 +201,20 @@ const PROJECTS = {
       {
         title: 'Rendus architecturaux',
         subtitle: 'Images de synthèse et perspectives',
-        images: Array.from({ length: 8 }, (_, i) => `${VB}/rendu-${i + 1}.jpeg`)
+        images: Array.from({ length: 7 }, (_, i) => `${VB}/rendu-${i + 2}.jpeg`)
       },
       {
         title: 'Visualisation SketchUp',
         subtitle: 'Modélisation 3D et volumes',
-        images: Array.from({ length: 4 }, (_, i) => `${VB}/VISUALISATION SKETCHUP/sketchup-${i + 1}.jpeg`)
+        images: [`${VB}/rendu-1.jpeg`]
       },
       {
         title: 'Design intérieur',
-        subtitle: 'Aménagements et ambiances intérieures',
-        images: Array.from({ length: 9 }, (_, i) => `${VB}/interior design/interior-${i + 1}.jpeg`)
+        subtitle: 'Aménagements, ambiances et croquis SketchUp',
+        images: [
+          ...Array.from({ length: 9 }, (_, i) => `${VB}/interior design/interior-${i + 1}.jpeg`),
+          ...Array.from({ length: 4 }, (_, i) => `${VB}/VISUALISATION SKETCHUP/sketchup-${i + 1}.jpeg`)
+        ]
       },
       {
         title: 'Plans AutoCAD',
@@ -251,9 +254,14 @@ const PROJECTS = {
     cover: `${PC}/clinique-1.jpeg`,
     galleries: [
       {
-        title: 'Visualisations du projet',
-        subtitle: 'Rendus et perspectives de la clinique',
-        images: Array.from({ length: 4 }, (_, i) => `${PC}/clinique-${i + 1}.jpeg`)
+        title: 'Option 1',
+        subtitle: 'Rendus photoréalistes — façade et vue aérienne',
+        images: [`${PC}/clinique-1.jpeg`, `${PC}/clinique-3.jpeg`]
+      },
+      {
+        title: 'Option 2',
+        subtitle: 'Modélisation SketchUp — volumes et perspectives 3D',
+        images: [`${PC}/clinique-2.jpeg`, `${PC}/clinique-4.jpeg`]
       }
     ],
     ready: true
