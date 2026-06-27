@@ -1,5 +1,10 @@
 const VB = 'images/autres projets/Villa Bassam';
 
+const VISUALISATION_SKETCHUP = [{
+  src: `${VB}/rendu-1.jpeg`,
+  title: 'Visualisation SketchUp — autre villa'
+}];
+
 const SKETCHUP_CROQUIS = Array.from({ length: 4 }, (_, i) => ({
   src: `${VB}/VISUALISATION SKETCHUP/sketchup-${i + 1}.jpeg`,
   title: `Croquis SketchUp ${i + 1}`
@@ -20,6 +25,7 @@ function renderGallery(containerId, items) {
   `).join('');
 }
 
+renderGallery('gallery-volumes', VISUALISATION_SKETCHUP);
 renderGallery('gallery-sketchup', SKETCHUP_CROQUIS);
 
 const lightbox = document.getElementById('lightbox');

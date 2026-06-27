@@ -3,7 +3,7 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>NFN Design | Ndeye Fatim Ndoye — Architecture • Engineering • Visualization</title>
+<title>NFN Design | Ndeye Fatim Ndoye — Architecture • Design • Innovation</title>
 <meta name="description" content="NFN Design — Portfolio de Ndeye Fatim Ndoye, Ingénieure Génie Civil & Conceptrice Architecturale. CHA Studio Design, modélisation 3D, plans techniques et visualisation. Dakar, Sénégal.">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -762,8 +762,8 @@ a.portfolio-item { display: block; color: inherit; }
   max-height: 4000px; opacity: 1; margin-top: 48px;
 }
 .gallery-section-grid--rubrics {
-  grid-template-columns: repeat(3, 1fr);
-  max-width: 1100px;
+  grid-template-columns: 1fr;
+  max-width: 420px;
 }
 @media (max-width: 768px) {
   .gallery-section-grid--rubrics { grid-template-columns: 1fr; max-width: 100%; }
@@ -782,6 +782,19 @@ a.portfolio-item { display: block; color: inherit; }
 }
 .modelisation-inner-header p {
   font-size: 0.9rem; color: var(--gray-dark); font-weight: 300;
+}
+.modelisation-subsection-header {
+  margin-bottom: 20px;
+}
+.modelisation-subsection-header h4 {
+  font-family: var(--font-serif); font-size: 1.1rem; color: var(--black);
+  margin-bottom: 4px;
+}
+.modelisation-subsection-header p {
+  font-size: 0.85rem; color: var(--gray); font-weight: 300;
+}
+.modelisation-subsection + .modelisation-subsection {
+  margin-top: 40px; padding-top: 32px; border-top: 1px solid var(--gray-light);
 }
 .gallery-card--rubric { cursor: pointer; }
 
@@ -1056,7 +1069,15 @@ a.portfolio-item { display: block; color: inherit; }
 }
 .contact-info .contact-title {
   font-size: 0.9rem; color: var(--bordeaux);
-  font-weight: 400; margin-bottom: 24px;
+  font-weight: 400; margin-bottom: 12px;
+}
+.contact-signature {
+  display: block;
+  width: 180px;
+  max-width: 100%;
+  height: auto;
+  margin-bottom: 24px;
+  opacity: 0.92;
 }
 .contact-info .contact-location {
   font-size: 0.85rem; color: var(--gray);
@@ -1081,15 +1102,24 @@ a.portfolio-item { display: block; color: inherit; }
 .contact-social {
   display: flex; gap: 12px;
 }
-.contact-social a {
+.contact-social a,
+.footer-social a {
   width: 44px; height: 44px;
   display: flex; align-items: center; justify-content: center;
   border: 1px solid var(--gray-light);
   border-radius: 50%; color: var(--gray-dark);
   transition: all var(--transition);
-  font-size: 1.1rem;
+}
+.contact-social a svg,
+.footer-social a svg,
+.contact-detail-icon svg {
+  width: 20px; height: 20px; fill: currentColor;
 }
 .contact-social a:hover { border-color: var(--bordeaux); background: var(--bordeaux); color: var(--white); }
+.contact-social a.social-linkedin:hover { border-color: #0A66C2; background: #0A66C2; color: var(--white); }
+.contact-social a.social-instagram:hover { border-color: #E4405F; background: #E4405F; color: var(--white); }
+.contact-social a.social-whatsapp:hover { border-color: #25D366; background: #25D366; color: var(--white); }
+.contact-detail-icon svg { width: 18px; height: 18px; }
 .contact-qr {
   margin-top: 24px; width: 100px; height: 100px;
   background: var(--white); border: 1px solid var(--gray-light);
@@ -1147,6 +1177,19 @@ a.portfolio-item { display: block; color: inherit; }
   width: 40px; height: 1px; background: var(--bordeaux);
   margin: 16px auto;
 }
+.footer-social {
+  display: flex; justify-content: center; gap: 14px;
+  margin: 20px 0 8px;
+}
+.footer-social a {
+  border-color: rgba(255,255,255,0.15);
+  color: rgba(255,255,255,0.75);
+  background: rgba(255,255,255,0.04);
+}
+.footer-social a:hover { transform: translateY(-2px); color: var(--white); }
+.footer-social a.social-linkedin:hover { border-color: #0A66C2; background: #0A66C2; }
+.footer-social a.social-instagram:hover { border-color: #E4405F; background: #E4405F; }
+.footer-social a.social-whatsapp:hover { border-color: #25D366; background: #25D366; }
 
 /* SCROLL REVEAL */
 .reveal { opacity: 0; transform: translateY(30px); transition: all 0.8s ease; }
@@ -1294,7 +1337,7 @@ a.portfolio-item { display: block; color: inherit; }
         Ingénieure en génie civil passionnée par l'architecture, le design, l'innovation et le développement immobilier. Mon parcours combine expertise technique, créativité architecturale et maîtrise des outils numériques afin de concevoir des espaces fonctionnels, esthétiques et durables.
       </p>
       <p class="about-text">
-        J'interviens dans la conception architecturale, la réalisation de plans techniques, les études de génie civil, la modélisation 3D, les rendus photoréalistes, l'assainissement, la voirie, le suivi de projets ainsi que la création de supports de communication immobilière.
+        J'interviens dans la conception architecturale, la réalisation de plans techniques, les études de génie civil, la modélisation 3D, les rendus photoréalistes, le suivi de projets ainsi que la création de supports de communication immobilière.
       </p>
       <div class="about-details">
         <div class="about-detail-item">
@@ -1450,8 +1493,6 @@ a.portfolio-item { display: block; color: inherit; }
   <div class="portfolio-filters reveal" id="portfolioFilters">
     <button class="portfolio-filter active" data-filter="all">Tous</button>
     <button class="portfolio-filter" data-filter="residentiel">Résidentiel</button>
-    <button class="portfolio-filter" data-filter="commercial">Commercial</button>
-    <button class="portfolio-filter" data-filter="renovation">Rénovation</button>
     <button class="portfolio-filter" data-filter="autres">Autres</button>
     <button class="portfolio-filter" data-filter="3d">3D</button>
   </div>
@@ -1525,129 +1566,64 @@ a.portfolio-item { display: block; color: inherit; }
   <div class="section-header reveal">
     <div class="section-label">Modélisation 3D</div>
     <h2 class="section-title">Maquettes Numériques</h2>
-    <p class="section-subtitle">SketchUp — choisissez un projet pour découvrir les maquettes numériques.</p>
+    <p class="section-subtitle">SketchUp — volumes architecturaux et croquis de design intérieur.</p>
   </div>
 
   <div class="gallery-section-grid gallery-section-grid--rubrics reveal">
-    <div class="gallery-card gallery-card--rubric" data-rubric-open="modelisation-samira" role="button" tabindex="0" aria-label="Samira — Maquettes SketchUp">
-      <div class="gallery-card-bg" style="background-image:url('images/samira/maquette3d-3.jpeg')"></div>
-      <div class="gallery-card-overlay">
-        <h4>Samira</h4>
-        <p>Résidence R+8 — Almadies · 11 vues</p>
-        <span class="rubric-card-hint">Cliquer pour voir →</span>
-      </div>
-    </div>
-    <div class="gallery-card gallery-card--rubric" data-rubric-open="modelisation-villa-bassam" role="button" tabindex="0" aria-label="Villa Bassam — SketchUp">
-      <div class="gallery-card-bg" style="background-image:url('images/autres%20projets/Villa%20Bassam/rendu-1.jpeg')"></div>
-      <div class="gallery-card-overlay">
-        <h4>Villa Bassam</h4>
-        <p>Volumes architecturaux · Grand-Bassam</p>
-        <span class="rubric-card-hint">Cliquer pour voir →</span>
-      </div>
-    </div>
-    <div class="gallery-card gallery-card--rubric" data-rubric-open="modelisation-interior" role="button" tabindex="0" aria-label="Croquis design intérieur — SketchUp">
+    <div class="gallery-card gallery-card--rubric" data-rubric-open="modelisation-sketchup" role="button" tabindex="0" aria-label="Modélisation SketchUp">
       <div class="gallery-card-bg" style="background-image:url('images/autres%20projets/Villa%20Bassam/VISUALISATION%20SKETCHUP/sketchup-1.jpeg')"></div>
       <div class="gallery-card-overlay">
-        <h4>Croquis intérieur</h4>
-        <p>Design intérieur · 4 vues SketchUp</p>
+        <h4>Modélisation SketchUp</h4>
+        <p>Volumes &amp; croquis intérieur · 5 vues</p>
         <span class="rubric-card-hint">Cliquer pour voir →</span>
       </div>
     </div>
   </div>
 
-  <div class="modelisation-inner" id="modelisation-samira">
+  <div class="modelisation-inner" id="modelisation-sketchup">
     <div class="modelisation-inner-header reveal">
       <div>
-        <h3>Samira — Maquette SketchUp</h3>
-        <p>11 vues · Almadies, Dakar</p>
+        <h3>Modélisation SketchUp</h3>
+        <p>Volumes architecturaux &amp; croquis intérieur</p>
       </div>
+      <a href="modelisation.html" class="rubric-card-hint" style="color:var(--bordeaux);font-weight:600;">Voir la page complète →</a>
     </div>
-    <div class="gallery-section-grid gallery-section-grid--dense reveal">
-      <div class="gallery-card" data-lightbox-title="Samira — Maquette 3D 1" data-lightbox-src="images/samira/maquette3d-1.jpeg">
-        <div class="gallery-card-bg" style="background-image:url('images/samira/maquette3d-1.jpeg')"></div>
-        <div class="gallery-card-overlay"><h4>Vue 1</h4><p>Samira</p></div>
-      </div>
-      <div class="gallery-card" data-lightbox-title="Samira — Maquette 3D 2" data-lightbox-src="images/samira/maquette3d-2.jpeg">
-        <div class="gallery-card-bg" style="background-image:url('images/samira/maquette3d-2.jpeg')"></div>
-        <div class="gallery-card-overlay"><h4>Vue 2</h4><p>Samira</p></div>
-      </div>
-      <div class="gallery-card" data-lightbox-title="Samira — Maquette 3D 3" data-lightbox-src="images/samira/maquette3d-3.jpeg">
-        <div class="gallery-card-bg" style="background-image:url('images/samira/maquette3d-3.jpeg')"></div>
-        <div class="gallery-card-overlay"><h4>Vue 3</h4><p>Samira</p></div>
-      </div>
-      <div class="gallery-card" data-lightbox-title="Samira — Maquette 3D 4" data-lightbox-src="images/samira/maquette3d-4.jpeg">
-        <div class="gallery-card-bg" style="background-image:url('images/samira/maquette3d-4.jpeg')"></div>
-        <div class="gallery-card-overlay"><h4>Vue 4</h4><p>Samira</p></div>
-      </div>
-      <div class="gallery-card" data-lightbox-title="Samira — Maquette 3D 5" data-lightbox-src="images/samira/maquette3d-5.jpeg">
-        <div class="gallery-card-bg" style="background-image:url('images/samira/maquette3d-5.jpeg')"></div>
-        <div class="gallery-card-overlay"><h4>Vue 5</h4><p>Samira</p></div>
-      </div>
-      <div class="gallery-card" data-lightbox-title="Samira — Maquette 3D 6" data-lightbox-src="images/samira/maquette3d-6.jpeg">
-        <div class="gallery-card-bg" style="background-image:url('images/samira/maquette3d-6.jpeg')"></div>
-        <div class="gallery-card-overlay"><h4>Vue 6</h4><p>Samira</p></div>
-      </div>
-      <div class="gallery-card" data-lightbox-title="Samira — Maquette 3D 7" data-lightbox-src="images/samira/maquette3d-7.jpeg">
-        <div class="gallery-card-bg" style="background-image:url('images/samira/maquette3d-7.jpeg')"></div>
-        <div class="gallery-card-overlay"><h4>Vue 7</h4><p>Samira</p></div>
-      </div>
-      <div class="gallery-card" data-lightbox-title="Samira — Maquette 3D 8" data-lightbox-src="images/samira/maquette3d-8.jpeg">
-        <div class="gallery-card-bg" style="background-image:url('images/samira/maquette3d-8.jpeg')"></div>
-        <div class="gallery-card-overlay"><h4>Vue 8</h4><p>Samira</p></div>
-      </div>
-      <div class="gallery-card" data-lightbox-title="Samira — Maquette 3D 9" data-lightbox-src="images/samira/maquette3d-9.jpeg">
-        <div class="gallery-card-bg" style="background-image:url('images/samira/maquette3d-9.jpeg')"></div>
-        <div class="gallery-card-overlay"><h4>Vue 9</h4><p>Samira</p></div>
-      </div>
-      <div class="gallery-card" data-lightbox-title="Samira — Maquette 3D 10" data-lightbox-src="images/samira/maquette3d-10.jpeg">
-        <div class="gallery-card-bg" style="background-image:url('images/samira/maquette3d-10.jpeg')"></div>
-        <div class="gallery-card-overlay"><h4>Vue 10</h4><p>Samira</p></div>
-      </div>
-      <div class="gallery-card" data-lightbox-title="Samira — Maquette 3D 11" data-lightbox-src="images/samira/maquette3d-11.jpeg">
-        <div class="gallery-card-bg" style="background-image:url('images/samira/maquette3d-11.jpeg')"></div>
-        <div class="gallery-card-overlay"><h4>Vue 11</h4><p>Samira</p></div>
-      </div>
-    </div>
-  </div>
 
-  <div class="modelisation-inner" id="modelisation-villa-bassam">
-    <div class="modelisation-inner-header reveal">
-      <div>
-        <h3>Villa Bassam — Visualisation SketchUp</h3>
-        <p>Modélisation volumétrique · Grand-Bassam</p>
+    <div class="modelisation-subsection reveal">
+      <div class="modelisation-subsection-header">
+        <h4>Visualisation SketchUp</h4>
+        <p>Autre villa · modélisation volumétrique</p>
+      </div>
+      <div class="gallery-section-grid reveal">
+        <div class="gallery-card" data-lightbox-title="Visualisation SketchUp — volumes" data-lightbox-src="images/autres%20projets/Villa%20Bassam/rendu-1.jpeg">
+          <div class="gallery-card-bg" style="background-image:url('images/autres%20projets/Villa%20Bassam/rendu-1.jpeg')"></div>
+          <div class="gallery-card-overlay"><h4>Vue 1</h4><p>Volumes architecturaux</p></div>
+        </div>
       </div>
     </div>
-    <div class="gallery-section-grid reveal">
-      <div class="gallery-card" data-lightbox-title="Villa Bassam — SketchUp" data-lightbox-src="images/autres%20projets/Villa%20Bassam/rendu-1.jpeg">
-        <div class="gallery-card-bg" style="background-image:url('images/autres%20projets/Villa%20Bassam/rendu-1.jpeg')"></div>
-        <div class="gallery-card-overlay"><h4>Vue 1</h4><p>Volumes architecturaux</p></div>
-      </div>
-    </div>
-  </div>
 
-  <div class="modelisation-inner" id="modelisation-interior">
-    <div class="modelisation-inner-header reveal">
-      <div>
-        <h3>Croquis design intérieur — SketchUp</h3>
-        <p>4 vues · aménagement intérieur</p>
+    <div class="modelisation-subsection reveal">
+      <div class="modelisation-subsection-header">
+        <h4>Croquis intérieur</h4>
+        <p>Design intérieur · 4 vues SketchUp</p>
       </div>
-    </div>
-    <div class="gallery-section-grid gallery-section-grid--dense reveal">
-      <div class="gallery-card" data-lightbox-title="Croquis intérieur — SketchUp 1" data-lightbox-src="images/autres%20projets/Villa%20Bassam/VISUALISATION%20SKETCHUP/sketchup-1.jpeg">
-        <div class="gallery-card-bg" style="background-image:url('images/autres%20projets/Villa%20Bassam/VISUALISATION%20SKETCHUP/sketchup-1.jpeg')"></div>
-        <div class="gallery-card-overlay"><h4>Vue 1</h4><p>Croquis intérieur</p></div>
-      </div>
-      <div class="gallery-card" data-lightbox-title="Croquis intérieur — SketchUp 2" data-lightbox-src="images/autres%20projets/Villa%20Bassam/VISUALISATION%20SKETCHUP/sketchup-2.jpeg">
-        <div class="gallery-card-bg" style="background-image:url('images/autres%20projets/Villa%20Bassam/VISUALISATION%20SKETCHUP/sketchup-2.jpeg')"></div>
-        <div class="gallery-card-overlay"><h4>Vue 2</h4><p>Croquis intérieur</p></div>
-      </div>
-      <div class="gallery-card" data-lightbox-title="Croquis intérieur — SketchUp 3" data-lightbox-src="images/autres%20projets/Villa%20Bassam/VISUALISATION%20SKETCHUP/sketchup-3.jpeg">
-        <div class="gallery-card-bg" style="background-image:url('images/autres%20projets/Villa%20Bassam/VISUALISATION%20SKETCHUP/sketchup-3.jpeg')"></div>
-        <div class="gallery-card-overlay"><h4>Vue 3</h4><p>Croquis intérieur</p></div>
-      </div>
-      <div class="gallery-card" data-lightbox-title="Croquis intérieur — SketchUp 4" data-lightbox-src="images/autres%20projets/Villa%20Bassam/VISUALISATION%20SKETCHUP/sketchup-4.jpeg">
-        <div class="gallery-card-bg" style="background-image:url('images/autres%20projets/Villa%20Bassam/VISUALISATION%20SKETCHUP/sketchup-4.jpeg')"></div>
-        <div class="gallery-card-overlay"><h4>Vue 4</h4><p>Croquis intérieur</p></div>
+      <div class="gallery-section-grid gallery-section-grid--dense reveal">
+        <div class="gallery-card" data-lightbox-title="Croquis intérieur — SketchUp 1" data-lightbox-src="images/autres%20projets/Villa%20Bassam/VISUALISATION%20SKETCHUP/sketchup-1.jpeg">
+          <div class="gallery-card-bg" style="background-image:url('images/autres%20projets/Villa%20Bassam/VISUALISATION%20SKETCHUP/sketchup-1.jpeg')"></div>
+          <div class="gallery-card-overlay"><h4>Vue 1</h4><p>Croquis intérieur</p></div>
+        </div>
+        <div class="gallery-card" data-lightbox-title="Croquis intérieur — SketchUp 2" data-lightbox-src="images/autres%20projets/Villa%20Bassam/VISUALISATION%20SKETCHUP/sketchup-2.jpeg">
+          <div class="gallery-card-bg" style="background-image:url('images/autres%20projets/Villa%20Bassam/VISUALISATION%20SKETCHUP/sketchup-2.jpeg')"></div>
+          <div class="gallery-card-overlay"><h4>Vue 2</h4><p>Croquis intérieur</p></div>
+        </div>
+        <div class="gallery-card" data-lightbox-title="Croquis intérieur — SketchUp 3" data-lightbox-src="images/autres%20projets/Villa%20Bassam/VISUALISATION%20SKETCHUP/sketchup-3.jpeg">
+          <div class="gallery-card-bg" style="background-image:url('images/autres%20projets/Villa%20Bassam/VISUALISATION%20SKETCHUP/sketchup-3.jpeg')"></div>
+          <div class="gallery-card-overlay"><h4>Vue 3</h4><p>Croquis intérieur</p></div>
+        </div>
+        <div class="gallery-card" data-lightbox-title="Croquis intérieur — SketchUp 4" data-lightbox-src="images/autres%20projets/Villa%20Bassam/VISUALISATION%20SKETCHUP/sketchup-4.jpeg">
+          <div class="gallery-card-bg" style="background-image:url('images/autres%20projets/Villa%20Bassam/VISUALISATION%20SKETCHUP/sketchup-4.jpeg')"></div>
+          <div class="gallery-card-overlay"><h4>Vue 4</h4><p>Croquis intérieur</p></div>
+        </div>
       </div>
     </div>
   </div>
@@ -1762,7 +1738,8 @@ a.portfolio-item { display: block; color: inherit; }
   <div class="contact-grid" style="max-width:1000px;margin:0 auto;">
     <div class="contact-info reveal">
       <h3>Ndeye Fatim Ndoye</h3>
-      <p class="contact-title">NFN Design — Architecture • Engineering • Visualization</p>
+      <p class="contact-title">NFN Design — Architecture • Design • Innovation</p>
+      <img src="images/signature-fatim-ndoye.png" alt="Signature — Fatim Ndoye" class="contact-signature" loading="lazy">
       <p class="contact-location">📍 Dakar – Sénégal</p>
       <div class="contact-details">
         <div class="contact-detail">
@@ -1774,22 +1751,28 @@ a.portfolio-item { display: block; color: inherit; }
           <a href="mailto:fabiediyart@gmail.com">fabiediyart@gmail.com</a>
         </div>
         <div class="contact-detail">
-          <div class="contact-detail-icon">💬</div>
+          <div class="contact-detail-icon"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.435 9.884-9.884 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/></svg></div>
           <a href="https://wa.me/221772346735" target="_blank" rel="noopener noreferrer">WhatsApp — +221 77 234 67 35</a>
         </div>
         <div class="contact-detail">
-          <div class="contact-detail-icon">🔗</div>
+          <div class="contact-detail-icon"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M20.447 20.452h-3.554v-5.569c0-1.328-.027-3.037-1.852-3.037-1.853 0-2.136 1.445-2.136 2.939v5.667H9.351V9h3.414v1.561h.046c.477-.9 1.637-1.85 3.37-1.85 3.601 0 4.267 2.37 4.267 5.455v6.286zM5.337 7.433a-2.063 2.063 0 110-4.126 2.063 2.063 0 010 4.126zM22.225 0H1.771C.792 0 0 .774 0 1.729v20.542C0 23.227.792 24 1.771 24h20.451C23.2 24 24 23.227 24 22.271V1.729C24 .774 23.2 0 22.222 0h.003z"/></svg></div>
           <a href="https://www.linkedin.com/in/ndeye-fatim-ndoye-587251233" target="_blank" rel="noopener noreferrer">Ndeye Fatim Ndoye — LinkedIn</a>
         </div>
         <div class="contact-detail">
-          <div class="contact-detail-icon">📷</div>
+          <div class="contact-detail-icon"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.849 0 3.205-.012 3.584-.069 4.849-.149 3.225-1.664 4.771-4.919 4.919-1.266.058-1.644.07-4.85.07-3.204 0-3.584-.012-4.849-.07-3.26-.149-4.771-1.699-4.919-4.92-.058-1.265-.07-1.644-.07-4.849 0-3.204.013-3.583.07-4.849.149-3.227 1.664-4.771 4.919-4.919 1.266-.057 1.645-.069 4.849-.069zM12 0C8.741 0 8.333.014 7.053.072 2.695.272.273 2.69.073 7.052.014 8.333 0 8.741 0 12c0 3.259.014 3.668.072 4.948.2 4.358 2.618 6.78 6.98 6.98 1.281.058 1.689.072 4.948.072 3.259 0 3.668-.014 4.948-.072 4.354-.2 6.782-2.618 6.979-6.98.059-1.28.073-1.689.073-4.948 0-3.259-.014-3.667-.072-4.947-.196-4.354-2.617-6.78-6.979-6.98C15.668.014 15.259 0 12 0zm0 5.838a6.162 6.162 0 100 12.324 6.162 6.162 0 000-12.324zM12 16a4 4 0 110-8 4 4 0 010 8zm6.406-11.845a1.44 1.44 0 11-2.881.001 1.44 1.44 0 012.881-.001z"/></svg></div>
           <a href="https://www.instagram.com/fatim.bint.elhaj" target="_blank" rel="noopener noreferrer">@fatim.bint.elhaj — Instagram</a>
         </div>
       </div>
       <div class="contact-social">
-        <a href="https://www.linkedin.com/in/ndeye-fatim-ndoye-587251233" target="_blank" rel="noopener noreferrer" aria-label="LinkedIn">in</a>
-        <a href="https://www.instagram.com/fatim.bint.elhaj" target="_blank" rel="noopener noreferrer" aria-label="Instagram">Ig</a>
-        <a href="https://wa.me/221772346735" target="_blank" rel="noopener noreferrer" aria-label="WhatsApp">Wa</a>
+        <a href="https://www.linkedin.com/in/ndeye-fatim-ndoye-587251233" class="social-linkedin" target="_blank" rel="noopener noreferrer" aria-label="LinkedIn">
+          <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M20.447 20.452h-3.554v-5.569c0-1.328-.027-3.037-1.852-3.037-1.853 0-2.136 1.445-2.136 2.939v5.667H9.351V9h3.414v1.561h.046c.477-.9 1.637-1.85 3.37-1.85 3.601 0 4.267 2.37 4.267 5.455v6.286zM5.337 7.433a-2.063 2.063 0 110-4.126 2.063 2.063 0 010 4.126zM22.225 0H1.771C.792 0 0 .774 0 1.729v20.542C0 23.227.792 24 1.771 24h20.451C23.2 24 24 23.227 24 22.271V1.729C24 .774 23.2 0 22.222 0h.003z"/></svg>
+        </a>
+        <a href="https://www.instagram.com/fatim.bint.elhaj" class="social-instagram" target="_blank" rel="noopener noreferrer" aria-label="Instagram">
+          <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.849 0 3.205-.012 3.584-.069 4.849-.149 3.225-1.664 4.771-4.919 4.919-1.266.058-1.644.07-4.85.07-3.204 0-3.584-.012-4.849-.07-3.26-.149-4.771-1.699-4.919-4.92-.058-1.265-.07-1.644-.07-4.849 0-3.204.013-3.583.07-4.849.149-3.227 1.664-4.771 4.919-4.919 1.266-.057 1.645-.069 4.849-.069zM12 0C8.741 0 8.333.014 7.053.072 2.695.272.273 2.69.073 7.052.014 8.333 0 8.741 0 12c0 3.259.014 3.668.072 4.948.2 4.358 2.618 6.78 6.98 6.98 1.281.058 1.689.072 4.948.072 3.259 0 3.668-.014 4.948-.072 4.354-.2 6.782-2.618 6.979-6.98.059-1.28.073-1.689.073-4.948 0-3.259-.014-3.667-.072-4.947-.196-4.354-2.617-6.78-6.979-6.98C15.668.014 15.259 0 12 0zm0 5.838a6.162 6.162 0 100 12.324 6.162 6.162 0 000-12.324zM12 16a4 4 0 110-8 4 4 0 010 8zm6.406-11.845a1.44 1.44 0 11-2.881.001 1.44 1.44 0 012.881-.001z"/></svg>
+        </a>
+        <a href="https://wa.me/221772346735" class="social-whatsapp" target="_blank" rel="noopener noreferrer" aria-label="WhatsApp">
+          <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.435 9.884-9.884 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/></svg>
+        </a>
       </div>
     </div>
     <form class="contact-form reveal" id="contactForm">
@@ -1829,7 +1812,18 @@ a.portfolio-item { display: block; color: inherit; }
 <footer class="footer">
   <div class="footer-name">NFN Design</div>
   <div class="footer-line"></div>
-  <p class="footer-text">Architecture • Engineering • Visualization</p>
+  <p class="footer-text">Architecture • Design • Innovation</p>
+  <div class="footer-social">
+    <a href="https://www.linkedin.com/in/ndeye-fatim-ndoye-587251233" class="social-linkedin" target="_blank" rel="noopener noreferrer" aria-label="LinkedIn">
+      <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M20.447 20.452h-3.554v-5.569c0-1.328-.027-3.037-1.852-3.037-1.853 0-2.136 1.445-2.136 2.939v5.667H9.351V9h3.414v1.561h.046c.477-.9 1.637-1.85 3.37-1.85 3.601 0 4.267 2.37 4.267 5.455v6.286zM5.337 7.433a-2.063 2.063 0 110-4.126 2.063 2.063 0 010 4.126zM22.225 0H1.771C.792 0 0 .774 0 1.729v20.542C0 23.227.792 24 1.771 24h20.451C23.2 24 24 23.227 24 22.271V1.729C24 .774 23.2 0 22.222 0h.003z"/></svg>
+    </a>
+    <a href="https://www.instagram.com/fatim.bint.elhaj" class="social-instagram" target="_blank" rel="noopener noreferrer" aria-label="Instagram">
+      <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.849 0 3.205-.012 3.584-.069 4.849-.149 3.225-1.664 4.771-4.919 4.919-1.266.058-1.644.07-4.85.07-3.204 0-3.584-.012-4.849-.07-3.26-.149-4.771-1.699-4.919-4.92-.058-1.265-.07-1.644-.07-4.849 0-3.204.013-3.583.07-4.849.149-3.227 1.664-4.771 4.919-4.919 1.266-.057 1.645-.069 4.849-.069zM12 0C8.741 0 8.333.014 7.053.072 2.695.272.273 2.69.073 7.052.014 8.333 0 8.741 0 12c0 3.259.014 3.668.072 4.948.2 4.358 2.618 6.78 6.98 6.98 1.281.058 1.689.072 4.948.072 3.259 0 3.668-.014 4.948-.072 4.354-.2 6.782-2.618 6.979-6.98.059-1.28.073-1.689.073-4.948 0-3.259-.014-3.667-.072-4.947-.196-4.354-2.617-6.78-6.979-6.98C15.668.014 15.259 0 12 0zm0 5.838a6.162 6.162 0 100 12.324 6.162 6.162 0 000-12.324zM12 16a4 4 0 110-8 4 4 0 010 8zm6.406-11.845a1.44 1.44 0 11-2.881.001 1.44 1.44 0 012.881-.001z"/></svg>
+    </a>
+    <a href="https://wa.me/221772346735" class="social-whatsapp" target="_blank" rel="noopener noreferrer" aria-label="WhatsApp">
+      <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.435 9.884-9.884 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/></svg>
+    </a>
+  </div>
   <p class="footer-text" style="font-size:0.7rem;margin-top:16px;">&copy; 2026 NFN Design — Tous droits réservés</p>
 </footer>
 

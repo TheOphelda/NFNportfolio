@@ -183,7 +183,7 @@ const PROJECTS = {
       'Plans AutoCAD',
       'Design intérieur',
       'Vues & perspectives',
-      'Devis lots sanitaires'
+      'Devis de tous les lots techniques'
     ],
     cover: `${VB}/rendu-7.jpeg`,
     screenMockup: {
@@ -204,17 +204,9 @@ const PROJECTS = {
         images: Array.from({ length: 7 }, (_, i) => `${VB}/rendu-${i + 2}.jpeg`)
       },
       {
-        title: 'Visualisation SketchUp',
-        subtitle: 'Modélisation 3D et volumes',
-        images: [`${VB}/rendu-1.jpeg`]
-      },
-      {
         title: 'Design intérieur',
-        subtitle: 'Aménagements, ambiances et croquis SketchUp',
-        images: [
-          ...Array.from({ length: 9 }, (_, i) => `${VB}/interior design/interior-${i + 1}.jpeg`),
-          ...Array.from({ length: 4 }, (_, i) => `${VB}/VISUALISATION SKETCHUP/sketchup-${i + 1}.jpeg`)
-        ]
+        subtitle: 'Aménagements et ambiances intérieures',
+        images: Array.from({ length: 9 }, (_, i) => `${VB}/interior design/interior-${i + 1}.jpeg`)
       },
       {
         title: 'Plans AutoCAD',
@@ -223,8 +215,8 @@ const PROJECTS = {
         images: [`${VB}/Autocad/autocad-1.jpeg`, `${VB}/Autocad/autocad-2.jpeg`]
       },
       {
-        title: 'Devis — Lots sanitaires',
-        subtitle: 'Exemples de documentation lot sanitaire',
+        title: 'Devis de tous les lots techniques',
+        subtitle: 'Exemples de documentation par lots techniques',
         fit: 'contain',
         images: [
           `${VB}/EXEMPLE DES DEVIS LOTS SANITAIRES-VILLA BASSAM/devis-sanitaire-1.jpeg`,
