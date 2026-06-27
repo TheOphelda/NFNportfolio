@@ -1,13 +1,8 @@
 const VB = 'images/autres projets/Villa Bassam';
 
-const ARCHI_SKETCHUP = [{
-  src: `${VB}/rendu-1.jpeg`,
-  title: 'Villa Bassam — modélisation SketchUp'
-}];
-
-const INTERIOR_SKETCHUP = Array.from({ length: 4 }, (_, i) => ({
+const SKETCHUP_CROQUIS = Array.from({ length: 4 }, (_, i) => ({
   src: `${VB}/VISUALISATION SKETCHUP/sketchup-${i + 1}.jpeg`,
-  title: `Croquis design intérieur — SketchUp ${i + 1}`
+  title: `Croquis SketchUp ${i + 1}`
 }));
 
 function encodePath(path) {
@@ -25,8 +20,7 @@ function renderGallery(containerId, items) {
   `).join('');
 }
 
-renderGallery('gallery-archi', ARCHI_SKETCHUP);
-renderGallery('gallery-interior', INTERIOR_SKETCHUP);
+renderGallery('gallery-sketchup', SKETCHUP_CROQUIS);
 
 const lightbox = document.getElementById('lightbox');
 const lightboxTitle = document.getElementById('lightboxTitle');
